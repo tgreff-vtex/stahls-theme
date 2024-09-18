@@ -1,0 +1,15 @@
+@media (min-width: 768px) {
+  .animation {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .animation {
+    width: 25%;
+  }
+}
+
+.menuIcon {
+  color: var(--serious-black);
+}

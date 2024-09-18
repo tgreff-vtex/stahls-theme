@@ -1,0 +1,161 @@
+{
+  "store.product": {
+    "children": [
+      "responsive-layout.mobile#product",
+      "responsive-layout.desktop#product"
+    ]
+  },
+  "condition-layout.product#ThreekitMobile": {
+    "props": {
+      "conditions": [
+        {
+          "subject": "specificationProperties",
+          "arguments": {
+            "name": "Asset ID"
+          }
+        }
+      ],
+      "Then": "flex-layout.row#threekit-and-add-to-cart-button",
+      "Else": "flex-layout.row#main-mobile"
+    }
+  },
+
+  "condition-layout.product#utility": {
+    "props": {
+      "conditions": [
+        {
+          "subject": "productId",
+          "arguments": {
+            "id": "960138072"
+          }
+        }
+      ],
+      "Then": "store.custom#landing-page",
+      "Else": "flex-layout.row#product"
+    }
+  },
+
+  "flex-layout.row#main-mobile": {
+    "children": ["flex-layout.col#main-mobile"]
+  },
+  "flex-layout.col#main-mobile": {
+    "children": [
+      "flex-layout.row#brand-and-rating",
+      "flex-layout.row#product-name",
+      "flex-layout.row#product-identifier",
+      "flex-layout.row#product-images",
+      "check-permission#sku-list",
+      "flex-layout.row#assembly-options",
+      "flex-layout.row#divider",
+      "flex-layout.row#box",
+      "product-kit#buy-together",
+      "flex-layout.row#description-and-gallery",
+      "flex-layout.row#specification",
+      "flex-layout.row#reviews-and-ratings"
+    ]
+  },
+  "responsive-layout.mobile#product": {
+    "children": [
+      "flex-layout.row#breadcrumb",
+      "condition-layout.product#ThreekitMobile",
+      "flex-layout.row#alsoView"
+    ]
+  },
+  "responsive-layout.desktop#product": {
+    "children": [
+      // "condition-layout.product#utility"
+      "flex-layout.row#product"
+      //"flex-layout.row#alsoView"
+    ]
+  },
+  "flex-layout.row#product": {
+    "children": ["flex-layout.col#product"]
+  },
+  "condition-layout.product#Threekit": {
+    "props": {
+      "conditions": [
+        {
+          "subject": "specificationProperties",
+          "arguments": {
+            "name": "Asset ID"
+          }
+        }
+      ],
+      "Then": "flex-layout.row#threekit-and-add-to-cart-button",
+      "Else": "flex-layout.row#main"
+    }
+  },
+  "flex-layout.row#threekit-and-add-to-cart-button": {
+    "children": ["flex-layout.col#threekit-and-add-to-cart-button"]
+  },
+  "check-permission#ThreekitPrice": {
+    "props": {
+      "roles": [
+        "store-admin",
+        "sales-admin",
+        "sales-manager",
+        "sales-representative",
+        "customer-admin",
+        "customer-approver",
+        "customer-buyer"
+      ]
+    },
+    "blocks": [
+      "allowed-content#ThreekitPrice",
+      "disallowed-content#ThreekitPrice"
+    ]
+  },
+  "allowed-content#ThreekitPrice": {
+    "children": []
+  },
+  "disallowed-content#ThreekitPrice": {
+    "children": []
+  },
+  "flex-layout.col#threekit-and-add-to-cart-button": {
+    "children": ["check-permission#ThreekitPrice"]
+  },
+  "flex-layout.row#add-to-cart-button": {
+    "children": ["vtex.flex-layout:flex-layout.col", "add-to-cart-button"]
+  },
+  "flex-layout.row#wishlist-button-pdp": {
+    "children": [
+      "button-wishlist-pdp"
+    ]
+  },
+  "flex-layout.col#product": {
+    "children": [
+      "flex-layout.row#breadcrumb",
+      "flex-layout.row#wishlist-button-pdp",
+      "condition-layout.product#Threekit",
+      "shelf.relatedProducts",
+      // "flex-layout.row#product-details",
+      // "flex-layout.row#main",
+      "product-kit#buy-together"//, // This block won't work if it's not a direct children of store.product
+      // "flex-layout.row#description-and-gallery",
+      // "flex-layout.row#features",
+      // "flex-layout.row#specification",
+      // "flex-layout.row#reviews-and-ratings"
+      
+    ]
+  },
+
+  "shelf.relatedProducts": {
+    "props": {
+        // "recommendation": "suggestions",
+        "productList": {
+            "titleText": "More Products You May Like",
+            "itemsPerPage": 5
+        },
+        "blockClass": "related-products"
+    },
+    "blocks": [
+      "vtex.product-summary@2.x:product-summary"
+    ]
+  },
+
+  "vtex.product-summary@2.x:product-summary": {
+    "props": {
+      "blockClass": "related-product-card"
+    }
+  }
+}

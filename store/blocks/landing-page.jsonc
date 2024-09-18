@@ -1,0 +1,159 @@
+{
+ "store.custom#landing-page": {
+    "blocks": [
+        "info-card",
+        "flex-layout.row#lp1",
+        "flex-layout.row#trending",
+        "flex-layout.col#product1",
+        //"rich-text#3",
+        "flex-layout.row#newsletterlp",
+        "flex-layout.row#image"
+        //"newsletter-form#lp"
+   ]
+ },
+ "flex-layout.row#lp1":{
+    "children":[
+        "flex-layout.col#lp1",
+        "flex-layout.col#product1"
+    ],
+    "props":{
+        "colGap":10
+    }
+ },
+
+ "info-card": {
+    "props": {
+      "id": "info-card-example",
+      "isFullModeStyle": false,
+      "textPosition": "left",
+      "imageUrl": "https://storecomponents.vteximg.com.br/arquivos/banner-infocard2.png",
+      "headline": "Clearance Sale",
+      "callToActionText": "DISCOVER",
+      "callToActionUrl": "/sale/d",
+      "blockClass": "info-card-example",
+      "textAlignment": "center"
+    }
+  },
+
+"flex-layout.col#lp1":{
+    "children":[
+        "rich-text",
+        "product-images"
+    ],
+    "props":{
+        "blockClass": "textColumn",
+        "preventVerticalStretch":true
+    }
+},
+
+ "rich-text": {
+    "props": {
+      "textAlignment": "LEFT",
+      "textPosition": "LEFT",
+      "left-margin":10,
+      "text": "Visit our [help](https://developers.vtex.com/vtex-developer-docs/docs/welcome) section.\n**Be Bold!**\n*This is italic*",
+      "textColor": "#007fc9",
+      "font": "t-heading-5",
+      "blockClass": "help-message"
+    }
+  },
+
+  "rich-text#2": {
+    "props": {
+      "textAlignment": "LEFT",
+      "textPosition": "LEFT",
+      "left-margin":10,
+      "text": "**LITERATURE**\n**[Centrifugal Pump Cart Data Sheet](https://www.csidesigns.com/uploads/resources/Centrifugal-Pump-Cart-Data-Sheet.pdf)**\n**[Ficha De Datos Del Carrito Para Bomba Centrifuga](https://www.csidesigns.com/uploads/resources/Ficha-De-Datos-Del-Carrito-Para-Bomba-Centrifuga.pdf)**",
+      "textColor": "#007fc9",
+      "font": "t-heading-4",
+      "blockClass": "help-message"
+    }
+  },
+
+ // "flex-layout.row#product1": {
+    //"children": ["flex-layout.col#product1"]
+ // },
+  "flex-layout.col#product1": {
+    "children": [
+      "flex-layout.row#breadcrumb",
+      "flex-layout.row#brand-and-rating",
+      "flex-layout.row#product-name",
+      "flex-layout.row#product-identifier",
+      "seller-page-link",
+      "flex-layout.row#price",
+      "flex-layout.row#assembly-options",
+      // "sku-selector#desktop",
+      //"check-permission#sku-list",
+      // "flex-layout.row#sku-list",
+      // "condition-layout.product#sku-selector-or-list",
+     // "flex-layout.row#box",
+     "flex-layout.row#buy",
+      "rich-text#2"
+      // "flex-layout.row#link-seller"
+    ],
+    "props": {
+      "blockClass": "right-col",
+      "preventVerticalStretch": true,
+      "width": "45%",
+      "rowGap":2
+    }
+  },
+  "flex-layout.row#price":{
+    "children":"check-permission#product-price"
+  },
+
+  "flex-layout.row#buy":{
+    "children":[
+        "add-to-cart-button"
+    ]
+  },
+
+  "flex-layout.row#newsletterlp":{
+    "children":[
+        "rich-text#3",
+        "newsletter-form#lp"
+    ]
+  },
+
+  "rich-text#3": {
+    "props": {
+      "textAlignment": "LEFT",
+      "textPosition": "LEFT",
+      "left-margin":"50",
+      "text": "**Need a Custom Design?\n Talk to one of our experts!**",
+      "textColor": "#007fc9",
+      "font": "t-heading-4",
+      "blockClass": "help-message"
+    }
+  },
+
+  "newsletter-form#lp": {
+    "children":[
+        "newsletter-input-email",
+        "newsletter-input-name",
+        "newsletter-submit"
+    ]
+  },
+  "flex-layout.row#image":{
+    "children": [
+        "list-context.image-list#lp"
+    ]
+  },
+  "list-context.image-list#lp":{
+    "children":[
+        "slider-layout"
+    ],
+    "props":{
+        "preload":"true",
+        "height":"650",
+        "horizontalAlignment":"center",
+        "images": [
+            {
+                "loading": "eager",
+                "image": "https://demob2bstore.vtexassets.com/assets/vtex.file-manager-graphql/images/6e5a77e4-1bc2-407b-95c2-6f3fe11f1511___ba07b6fac9e203bf0bfc185fb7eebf54.png",
+                "description": "banner"
+            }
+        ]
+    }
+  } 
+}

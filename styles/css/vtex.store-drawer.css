@@ -1,0 +1,48 @@
+.drawer--menuDrawer,
+.overlay--menuDrawer {
+  z-index: 999;
+}
+
+.openIconContainer {
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.closeIconButton--menuDrawer {
+  margin-left: auto;
+}
+
+.closeIconContainer--menuDrawer {
+  background: #f0f0f0;
+  margin-bottom: 40px;
+}
+
+.menuIcon {
+  border: 1px solid #000;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #fff;
+  height: 48px;
+  padding: 16px 16px;
+  width: 5px;
+}
+
+.childrenContainer--menuDrawer {
+  padding: 0px 24px;
+}
+
+@media (max-width: 64rem) {
+  .openIconContainer {
+    margin-right: 16px;
+  }
+
+  .menuIcon {
+    border-radius: 0;
+    height: 14px;
+    padding: 0;
+    border: 0;
+    width: 20px;
+  }
+}

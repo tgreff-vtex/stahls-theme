@@ -1,0 +1,115 @@
+{
+    "store.custom#blog-template":{
+        "blocks":[
+            "flex-layout.row#blog1",
+            "flex-layout.row#blog2",
+            "flex-layout.row#blog3",
+            "flex-layout.row#blog4",
+            "flex-layout.row#blog5",
+            "flex-layout.row#blog6",
+            "flex-layout.row#trending",
+            "flex-layout.row#blog8"
+        ]
+    },
+    "flex-layout.row#blog1":{
+       "children": [
+        "rich-text#titleb"
+       ]
+    },
+    "flex-layout.row#blog2":{
+       "children": [
+        "rich-text#subtitle"
+       ]
+    },
+    "flex-layout.row#blog3":{
+       "children": [
+        "list-context.image-list#blog"
+       ]
+    },
+    "flex-layout.row#blog4":{
+        "children": [
+         "rich-text#body"
+        ]
+    },
+    "flex-layout.row#blog5":{
+        "children":[
+            "list-context.image-list#blog"
+        ]
+    },
+    "flex-layout.row#blog6":{
+        "children": [
+            "rich-text#body"
+        ]
+    },
+    "flex-layout.row#blog8":{
+        "children": [
+            "rich-text#about"
+        ]
+    },
+
+    "rich-text#titleb": {
+        "props": {
+          "textAlignment": "LEFT",
+          "textPosition": "LEFT",
+          "left-margin":"50",
+          "text": "**Insert title here**",
+          "textColor": "#007fc9",
+          "font": "t-heading-4",
+          "blockClass": "help-message"
+        }
+      },
+
+      "rich-text#subtitle": {
+        "props": {
+          "textAlignment": "LEFT",
+          "textPosition": "LEFT",
+          "left-margin":"50",
+          "text": "***Insert author and date here***",
+          "textColor": "#007fc9",
+          "font": "t-body",
+          "blockClass": "help-message"
+        }
+      },
+
+      "rich-text#body": {
+        "props": {
+          "textAlignment": "LEFT",
+          "textPosition": "LEFT",
+          "left-margin":"50",
+          "text": "Insert body",
+          "textColor": "#007fc9",
+          "font": "t-body",
+          "blockClass": "help-message"
+        }
+      },
+    
+      "rich-text#about": {
+        "props": {
+          "textAlignment": "LEFT",
+          "textPosition": "LEFT",
+          "left-margin":"50",
+          "text": "*Insert about the author*",
+          "textColor": "#007fc9",
+          "font": "t-heading-5",
+          "blockClass": "help-message"
+        }
+      },
+
+    "list-context.image-list#blog":{
+        "children":[
+            "slider-layout"
+        ],
+        "props":{
+            "preload":"true",
+            "height":"650",
+            "horizontalAlignment":"center",
+            "images": [
+                {
+                    "loading": "eager",
+                    "image": "https://demob2bstore.vtexassets.com/assets/vtex.file-manager-graphql/images/8d0e0ea2-3f6a-4f11-bfbe-680ccd4c3f28___ba6b7e0f428bd469375c1ecd6a3eca36.jpeg",
+                    "description": "banner"
+                }
+            ]
+        }
+      } 
+}
